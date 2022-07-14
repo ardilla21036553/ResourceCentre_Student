@@ -136,6 +136,10 @@ public class ResourceCentre {
 					camcorderList.get(i).getDueDate(),camcorderList.get(i).getOpticalZoom());
 		}
 		return output;
+		
+		
+		
+		
 	}
 	public static void viewAllCamcorder(ArrayList<Camcorder> camcorderList) {
 		ResourceCentre.setHeader("CAMCORDER LIST");
@@ -144,6 +148,11 @@ public class ResourceCentre {
 		 output += retrieveAllCamcorder(camcorderList);	
 		System.out.println(output);
 	}
+	
+	
+	
+	
+	
 
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
@@ -156,15 +165,31 @@ public class ResourceCentre {
 					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
 		}
 		return output;
+		
+		
+		
+		
+		
 	}
 	
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
+<<<<<<< HEAD
 		ResourceCentre.setHeader("CHROMEBOOK LIST");
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
 				"AVAILABLE", "DUE DATE","OPERATING SYSTEMS");
 		output += retrieveAllChromebook(chromebookList);
+=======
+		ResourceCentre.setHeader("CAMCORDER LIST");
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
+				"AVAILABLE", "DUE DATE","OS");
+		output += retrieveAllChromebook(chromebookList);	
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
 		System.out.println(output);
+	
 	}
+	
+	
+	
 
 	//================================= Option 2 Add an item (CRUD - Create) =================================
 	public static Camcorder inputCamcorder() {
@@ -182,17 +207,34 @@ public class ResourceCentre {
 		
 	}
 	
+	
 	public static Chromebook inputChromebook() {	
+<<<<<<< HEAD
 		// write your code here
 		String tag = Helper.readString("Enter asset tag");
 		String description = Helper.readString("Enter description");
 		String os = Helper.readString("Enter os");
 		Chromebook cb = new Chromebook(tag, description, os);
 		return cb ;
+=======
+		
+		String tag = Helper.readString("Enter asset tag > ");
+		String description = Helper.readString("Enter description > ");
+		String os = Helper.readString("Enter operating system > ");
+
+		Chromebook cb= new Chromebook(tag, description, os);
+		
+		return cb;
+			
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
 		
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
+<<<<<<< HEAD
 		// write your code here
+=======
+		
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
 		chromebookList.add(cb);
 		System.out.println("Chromebook added");
 	}
@@ -214,6 +256,9 @@ public class ResourceCentre {
 			}
 		}
 		return isLoaned;
+		
+		
+		
 	}
 	public static void loanCamcorder(ArrayList<Camcorder> camcorderList) {
 		ResourceCentre.viewAllCamcorder(camcorderList);
@@ -227,8 +272,11 @@ public class ResourceCentre {
 		}
 	}
 	
+	
+	
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 		// write your code here
+<<<<<<< HEAD
 		boolean isLoaned = false;
 
 		for (int i = 0; i < chromebookList.size(); i++) {
@@ -243,6 +291,28 @@ public class ResourceCentre {
 			}
 		}
 		return isLoaned;
+=======
+		
+		boolean isLoaned = false;
+
+		for (int i = 0; i < chromebookList.size(); i++) {
+			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
+					&& chromebookList.get(i).getIsAvailable() == true) {
+				
+				chromebookList.get(i).setIsAvailable(false);
+				chromebookList.get(i).setDueDate(dueDate);
+				
+				isLoaned = true;
+				
+			}
+		}
+		return isLoaned;
+		
+		
+		
+		
+		
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
 	}
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
@@ -255,7 +325,12 @@ public class ResourceCentre {
 		} else {
 			System.out.println("Chromebook " + tag + " loaned out");
 		}
+<<<<<<< HEAD
 			
+=======
+		
+		
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
 	}
 	
 	//================================= Option 4 Return an item (CRUD - Update)=================================
@@ -300,7 +375,12 @@ public class ResourceCentre {
 			}
 		}
 		return isReturned;
+		
 	}
+<<<<<<< HEAD
+=======
+		
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
 	
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
@@ -311,9 +391,25 @@ public class ResourceCentre {
 		if (isReturned == false) {
 			System.out.println("Invalid asset tag");
 		} else {
+<<<<<<< HEAD
 			System.out.println("Chromebook " + tag + " returned");
 		}
 	
-	}
+=======
+			System.out.println("Camcorder " + tag + " returned");
+		}
 
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
+	}
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/ardilla21036553/ResourceCentre_Student.git
 }
+
+//chermin00
+	
+	
+
+
+
